@@ -32,7 +32,7 @@ Of course, this approach could be extended in order to insert different `keys` a
 
 * Install directly from the online repository:
 
-        python -m pip install --extra-index-url https://github.com/fschuch/fastapi_project my_app
+        pip install --extra-index-url https://github.com/fschuch/fastapi_project my_app
 
 ## Usage
 
