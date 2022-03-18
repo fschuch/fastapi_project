@@ -1,6 +1,6 @@
 import pytest
 from fastapi.testclient import TestClient
-from my_app import app, my_header
+from my_app import app, custom_header
 
 
 @pytest.fixture
@@ -13,6 +13,7 @@ def response(client):
     return client.get("/")
 
 
-@pytest.mark.parametrize("key, value", my_header.items())
-def test_custom_key_values_at_header(response, key, value):
+@pytest.mark.parametrize("key, value", custom_header.items())
+def test_values_at_custom_header(response, key, value):
+    assert key in response.headers
     assert response.headers[key] == value
