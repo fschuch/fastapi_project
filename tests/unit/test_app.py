@@ -12,6 +12,10 @@ def client():
 def response(client):
     return client.get("/")
 
+def test_root_(response):
+    assert response.ok
+    assert response.status_code == 200
+    assert response.json() == {'message': 'Hello World'}
 
 @pytest.mark.parametrize("key, value", custom_header.items())
 def test_values_at_custom_header(response, key, value):
